@@ -1,0 +1,24 @@
+{% extends "blogs/base.html" %}
+
+{% block header %}
+  <h1>最新发布</h1>
+{% endblock header%}
+
+{% block content %}
+  <ul>
+    {% for post in posts %}
+      <li>
+        <h3>
+          <a href="{% url 'blogs:post' post.id%}">{{ post }}</a> 
+        </h3>
+      </li>
+    {% empty %}
+      <p>暂无相关帖子</p>
+    {% endfor %}
+  </ul>
+{% endblock content %}        
+
+
+
+
+

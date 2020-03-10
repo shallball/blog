@@ -1,0 +1,22 @@
+{% extends "blogs/base.html" %}
+
+{% block header %}
+  <h1>
+    <a href="{% url 'blogs:new_post' %}">发布新帖子</a>
+  </h1>
+{% endblock header%}
+
+{% block content %}
+  <ul>
+    {% for post in posts %}
+      <li>
+        <h3>
+          <a href="{% url 'blogs:post' post.id%}">{{ post }}</a>--
+          <a href="{% url 'blogs:edit_post' post.id%}">编辑</a>
+        </h3>
+      </li>
+    {% empty %}
+      <p>暂未发表帖子</p>
+    {% endfor %}
+  </ul>
+{% endblock content %}

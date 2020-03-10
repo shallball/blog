@@ -1,0 +1,11 @@
+{% extends "blogs/base.html" %}
+
+{% block header %}
+  <p>主题：{{ post }}&emsp;&emsp;&emsp;&emsp;
+     作者：{{ post.owner }}&emsp;&emsp;&emsp;&emsp;
+     发布时间：{{ post.date_added }}</p>
+{% endblock header%}
+
+{% block content %}
+    <p>{{ post.text }}</p>
+{% endblock content %}   
